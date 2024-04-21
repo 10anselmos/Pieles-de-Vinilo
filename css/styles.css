@@ -1,0 +1,27 @@
+  h1 {
+    color: red;
+  }
+  h2 {color:gold;}
+  p {
+    color: green;
+  }
+  li {
+    list-style-type: square;
+  }
+  .titu {
+    color: orange;
+    font-weight: bold;
+    list-style-type: none;
+  }
+  nav ul li {
+    list-style-type: none;
+  }
+  footer p {
+    color:black;
+    font-weight: bold;
+  }
+  header {
+    width: 1000px;
+    height: 335px;
+    background-image: url(../img/portadabig.jpg);
+  }
