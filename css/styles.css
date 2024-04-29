@@ -34,12 +34,12 @@
   /* header */
   /*fondo*/
   .header {
-    /*background-position: center center;
-    background-attachment:unset;*/
+    background-position: top left;
+    background-attachment:scroll;
     background-image: url(../img/portadabig.jpg);
     background-repeat: no-repeat;
-  background-size: 100% 70%;
-  background-origin: content-box;
+    background-size: 100% 70%;
+    background-origin: content-box;
   }
   
   
@@ -48,7 +48,7 @@
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(184,62,224);
     margin: 2px;
-    padding: 20px 5px 5px;
+    padding: 20px 16px 5px;
     font-size:500%;    
     display: inline-block;
     vertical-align: middle;
