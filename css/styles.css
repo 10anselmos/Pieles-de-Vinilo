@@ -1,7 +1,10 @@
-  *{
-    margin: 0;
-    padding: 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
   /*
     h1 {
     color: red;
@@ -30,15 +33,25 @@
     text-transform: uppercase;
     color: orangered;
     */
+  /* body*/
+  
+body{
+  display: flex;
+  font-family: system-ui, sans-serif;
+  background-image: url(../img/carbonogris.jpg);
+  background-size:100% 100%;
+  background-origin: content-box;
+  flex-direction: column;
+}
 
   /* header */
   /*fondo*/
   .header {
-    background-position: top left;
+    background-position:center;
     background-attachment:scroll;
     background-image: url(../img/portadabig.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 70%;
+    background-size: 100% 100%;
     background-origin: content-box;
   }
   
@@ -56,31 +69,127 @@
     text-shadow: 5px 5px 8px rgb(242,111,242);    
   }
 
-  /*barra*/
-  .barra {
-    display: inline-block;
-    margin: 150px 2px;
-    padding: 2px;
-    border-radius: 5px;
 
-  }
-  nav ul li a:hover{
-    color: rgb(1, 211, 1);
-    background-color: rgb(226,177,43);
-    margin: 2px;
-    border-radius: 5px;
-    padding: 2px;
-  }
-body{
-  background-image: url(../img/carbonofondo.webp);
-  background-repeat: repeat;
-background-size: 25% 25%;
-background-origin: content-box;
+  
+  /*barra de navegacion*/
+
+  .flex-container{
+    /*border: 0px solid black;
+    background: wheat;*/
+    padding: auto;
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap: wrap;
+    abajo opcion de las dos juntas*/
+    flex-flow: row wrap;
+    justify-content:flex-start;
+    align-items:center ;
+    align-content:center;
+    width: 100%;
+    
+    margin: 0 auto;
 }
+nav ul li{
+  border-radius: 5px;
+}
+.barra{
+  font-size: small;
+    text-wrap:nowrap;
+    list-style-type: none;
+    /*border: 1px solid burlywood;
+    background-color: whitesmoke;*/
+    color:brown;
+    font-family:fantasy;
+    width: 120px;
+    /*quitamos el width porque mas abajo usamos el flex-basis que es casi lo mismo que poner un width */
+    height: 15px;
+    line-height: 15px;
+    padding: auto;
+    justify-items:end;
+    text-align:center;
+    margin: 7px auto;
+    
+}
+
+.b1{
+    order: 1;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b2{
+    order: 2;
+    flex-grow: 1;
+   /*flex-basis: 8%;*/
+}
+.b3{
+    order: 3;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b4{
+    order: 4;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b5{
+    order: 5;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b6{
+    flex-grow: 1;
+    order: 6;
+    /*flex-basis: 8%;*/
+}
+.b7{
+    order: 7;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b8{
+    order: 8;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b9{
+    order: 9;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+.b10{
+    order: 10;
+    flex-grow: 1;
+    /*flex-basis: 8%;*/
+}
+
+nav ul li a{
+  text-decoration: none;
+}
+
+nav ul li:hover{
+    /*border: 1px solid rgb(210, 210, 210);*/
+    background-color: rgba(210, 210, 210, 0.144);
+    color:rgb(255, 254, 254);
+    border-radius: 5px;
+    box-shadow: 
+    5px 5px 7px rgba(0, 0, 0, 0.904),
+    inset 1px 1px 0px 0px #fff;
+}
+
+
+
+
+.pantalla{
+  display:flex;
+  flex-direction: row;
+}
+
 /* main */
 
 .main{
-  width: 68%;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
   margin: 1%;
   padding: 16px  16px;
   display: inline-block;
@@ -91,6 +200,7 @@ background-origin: content-box;
     background-size: 100%;
     background-origin:border-box;
     background-repeat:repeat;
+    text-align: center;
 }
 
 .calistoga-regular {
@@ -111,27 +221,141 @@ background-origin: content-box;
     list-style-type: none;
   }
 
+
+  /* === card === */
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 16px;
+
+}
+
+.cardBody {
+  width: 200px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  color: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cardBody:hover {
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+
+.cardBody img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px #333;
+}
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cardInfo {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.producCardPrice {
+  display: flex;
+  gap: 20px;
+}
+
+.producCardPrice b {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.producCardPrice span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(56, 215, 56);
+}
+
+.cardBody button {
+  padding: 8px 16px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #1b82f7;
+  color: #e0e0e0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 2px #333;
+  transition: all 0.3s;
+}
+
+.cardBody button:hover {
+  background-color: #0c35f0;
+  box-shadow: inset 0 0 6px #fff;
+  transition: all 0.3s;
+}
+
   /*aside*/
 
 aside{
-  width: 24%;
+  height:fit-content;
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
   margin: 1%;
-  padding: 5px;
-  display: inline-block;
+  padding:16px;
   vertical-align:top;
-  border: solid 2px;
+  border: solid 0px;
   border-radius: 25px;
   background-image: url(../img/man-vaping.jpg);
-    background-size: 100%;
+    background-size: 100% 100%;
     background-origin:border-box;
-    background-repeat:repeat;
+    background-repeat:no-repeat;
+}
+.flexvestir{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1%;
+  padding:16px;
+  vertical-align:auto;
+}
+.cap{
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 8px;
+  background-color: #e0e0e02c;
+  color: #0e0e0e;
+  flex-direction: row;
+  justify-content:center;
+  align-items:flex-start;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modmod{
+  margin: 10px;
+  border-radius: 13px;
+  float: left;
 }
 
 /* footer */
 .footer {
-  background-color: black;
-  background-size: 100% 70%;
+  background-color: #031004;
+  background-size: 100% 100%;
   background-origin: content-box;
+  display: grid;
+  place-items: center;
 }
 
 footer p {
@@ -139,16 +363,6 @@ footer p {
   font-weight: bold;
   padding-left: 16px;
 }
-
-  footer nav ul li{
-    display: inline-block;
-    margin:20px 2px;
-    padding: 3px;
-    border-radius: 5px;
-    padding-left: 16px;
-  }
-    
-
   
   
 
